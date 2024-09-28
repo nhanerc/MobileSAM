@@ -10,11 +10,8 @@ pip install -e .
 pip install onnxruntime timm
 
 # 3. Export to ONNX
-# python onnx/export_mixed.py -o weights # accept points or/and boxes
-python onnx/export_box_separate.py -o weights # accept a box per loop
-python onnx/export_box_merged.py -o weights # merged encoder and decoder, accept a box per loop
+python onnx/export.py -o weights
 
 # 4. Run inference with ONNX
 python onnx/inference.py -e weights/encoder.onnx -d weights/decoder.onnx -o result
-python onnx/inference.py -m weights/sam.onnx -o result
 ```
