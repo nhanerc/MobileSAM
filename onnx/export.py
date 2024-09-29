@@ -48,8 +48,8 @@ torch.onnx.export(
     do_constant_folding=True,
     dynamic_axes=dynamic_axes,
 )
-os.system("pip install onnx onnx_graphsurgeon polygraphy")
-os.system(f"polygraphy surgeon sanitize --fold-constants {decoder_path} -o {decoder_path}")
+# os.system("pip install onnx onnx_graphsurgeon polygraphy")
+# os.system(f"polygraphy surgeon sanitize --fold-constants {decoder_path} -o {decoder_path}")
 
 
 #### Encoder
@@ -63,4 +63,4 @@ torch.onnx.export(
     opset_version=16,
     do_constant_folding=True,
 )
-os.system(f"polygraphy surgeon sanitize --fold-constants {encoder_path} -o {encoder_path}")
+# os.system(f"polygraphy surgeon sanitize --fold-constants {encoder_path} -o {encoder_path}")
